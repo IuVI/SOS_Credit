@@ -52,4 +52,22 @@ print(simplification('AaAaaBbbbcCcdD'))
 print(simplification('AaAaabbbcCcd'))
 print(simplification('Hello, world!'))
 print(simplification('Hellllllo, woooooorld!'))
+print(simplification('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'))
+#%%
+from random import randrange
+def generate_text():
+    lines = input()
+    with open('text_generator.txt', 'w+') as t:
+        for i in range(int(lines)):
+            t.write(str(randrange(0, 101, 1))+ '\n')
+        t.close()
+generate_text()
+#%%
+def read_text():
+    n = int(input())
+    with open('text_generator.txt') as f:
+        for i in (f.readlines() [-n:]):
+            print(i,end=(''))
+read_text()
+
 
