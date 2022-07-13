@@ -33,4 +33,23 @@ print(palindrom_reshuffle('aaaaa'))
 print(palindrom_reshuffle('babab'))
 print(palindrom_reshuffle('Bbbbb'))
 #%%
+def simplification(text):
+    simplified_set = set(text)
+    simplified_set = sorted(simplified_set)
+    simplified_text = ''
+    for i in simplified_set:
+        #print(i)
+        counter = 0
+        for j in range(len(text)):
+            if i == text[j]:
+                counter = counter + 1
+        simplified_text = simplified_text + i + str(counter)
+    if len(simplified_text) > len(text):
+        return text
+    else:
+        return simplified_text
+print(simplification('AaAaaBbbbcCcdD'))
+print(simplification('AaAaabbbcCcd'))
+print(simplification('Hello, world!'))
+print(simplification('Hellllllo, woooooorld!'))
 
